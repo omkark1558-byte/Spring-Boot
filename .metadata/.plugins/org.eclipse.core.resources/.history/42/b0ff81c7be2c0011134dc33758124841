@@ -1,0 +1,9 @@
+package com.companesis.Employee.Repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.companesis.Employee.Entity.Employee;
+
+public class Employee_rpo  extends JpaRepository<Employee, Integer> {
+
+}

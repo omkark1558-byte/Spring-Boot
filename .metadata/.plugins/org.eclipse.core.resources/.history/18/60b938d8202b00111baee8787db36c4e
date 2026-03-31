@@ -1,0 +1,14 @@
+package com.banking.paymentservices;
+
+//import org.springframework.stereotype.Component;
+
+//@Component
+public class Target_2 implements Ivision {
+
+	public void Add() {
+
+		System.out.println("Task Two is Pending...⚠️");
+		System.out.println("heyyy");
+	}
+
+}

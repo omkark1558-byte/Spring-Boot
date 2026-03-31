@@ -1,0 +1,15 @@
+package com.example.demo.Classes;
+
+import org.springframework.stereotype.Component;
+
+@Component(value="oma")
+public class Phone_Pe implements Payment_services {
+
+	@Override
+	public void Payment() {
+
+System.out.println("Paid Payment Phone Pay..✅");
+		
+	}
+
+}

@@ -1,0 +1,41 @@
+package com.example.payment_services_2.Controlling;
+
+import org.apache.catalina.core.ApplicationContext;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import ch.qos.logback.core.Context;
+
+@RestController
+public class Scope_controller {
+
+	@Autowired
+	private ApplicationContext Context;
+	
+	@Autowired
+	private Student stud;
+
+	
+	@GetMapping("/Hashcode")
+	public int getHascode() {
+
+		System.out.println("HashCode Print...!");
+	 
+		
+		return stud.getID();
+	}
+	
+//	@Autowired
+	public void setstud(Student stud)
+	{
+		 this.stud = stud;
+		
+	}
+	
+	public Scope_controller(Student stud)
+	{
+		this.stud = stud;
+	}
+}

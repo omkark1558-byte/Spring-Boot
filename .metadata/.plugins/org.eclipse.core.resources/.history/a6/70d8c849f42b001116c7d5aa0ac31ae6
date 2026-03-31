@@ -1,0 +1,11 @@
+package com.example.demo.FindAndGet;
+
+public class Vidhyarti {
+
+	int vidhyarti_id;
+	String name;
+	
+	
+	
+	
+}

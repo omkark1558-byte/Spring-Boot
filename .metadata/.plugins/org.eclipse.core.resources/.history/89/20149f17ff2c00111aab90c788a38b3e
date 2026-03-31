@@ -1,0 +1,16 @@
+<form action="/save" method="post">
+    <input type="text" name="name" placeholder="Name"/>
+    <input type="email" name="email" placeholder="Email"/>
+    <input type="text" name="role" placeholder="Role"/>
+    <button type="submit">Save</button>
+</form>
+
+<table>
+<tr th:each="emp : ${list}">
+    <td th:text="${emp.name}"></td>
+    <td th:text="${emp.email}"></td>
+    <td>
+        <a th:href="@{'/delete/' + ${emp.id}}">Delete</a>
+    </td>
+</tr>
+</table>

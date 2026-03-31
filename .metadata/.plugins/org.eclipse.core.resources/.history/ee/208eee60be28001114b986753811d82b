@@ -1,0 +1,12 @@
+package com.example.payment_services_2.Controlling;
+
+public class Scope_controller {
+
+
+	private Student stud;
+	
+	public int getHascode()
+	{
+		return stud.getID();
+	}
+}

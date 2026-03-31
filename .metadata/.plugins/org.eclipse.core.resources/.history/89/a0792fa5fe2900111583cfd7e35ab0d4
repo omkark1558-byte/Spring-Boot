@@ -1,0 +1,14 @@
+package com.example.demo.Classes;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Goggle_pe implements Payment_services {
+
+	@Override
+	public void Payment() {
+		 
+		System.out.println("Paid Payment Goggle Pe....⚠️");
+	}
+
+}

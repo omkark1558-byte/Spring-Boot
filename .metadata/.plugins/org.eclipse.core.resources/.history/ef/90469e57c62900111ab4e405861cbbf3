@@ -1,0 +1,13 @@
+package com.revssion.session.Revision;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Practice_2 {
+
+	public Practice_2()
+	{
+		System.out.println("Second Constructor Calling...... !!⚠️");
+	}
+}
+

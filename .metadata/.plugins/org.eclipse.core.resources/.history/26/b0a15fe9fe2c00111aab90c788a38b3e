@@ -1,0 +1,30 @@
+package com.project.office_Employee.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class EmployeeController {
+
+    @Autowired
+    private EmployeeService service;
+
+    @GetMapping("/")
+    public String viewHome(Model model) {
+        model.addAttribute("list", service.getAllEmployees());
+        return "index";
+    }
+
+    @PostMapping("/save")
+    public String save(Employee emp) {
+        service.save(emp);
+        return "redirect:/";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable Long id) {
+        service.delete(id);
+        return "redirect:/";
+    }
+}

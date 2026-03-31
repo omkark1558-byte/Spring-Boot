@@ -1,0 +1,18 @@
+package com.example.demo.Contorller;
+ 
+
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class Demo_1 {
+	
+	
+	@PostMapping("/add-info")
+	public String getadd(String name, String Value, String mo_Number, @PathVariable(value="") double Price)
+	{
+		return "";
+	}
+
+	 }

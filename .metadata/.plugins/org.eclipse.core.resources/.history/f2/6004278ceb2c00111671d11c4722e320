@@ -1,0 +1,5 @@
+package com.project.office_Employee.service;
+
+@Repository
+public interface EmployeeRepository extends JpaRepository<Employee, Long> {
+}

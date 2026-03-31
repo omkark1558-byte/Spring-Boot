@@ -1,0 +1,27 @@
+package com.Connectivity.Actor.RestController;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.Connectivity.Actor.Entity.Actor;
+import com.Connectivity.Actor.Repositry.Actor_Repositry;
+
+@RestController
+public class Actor_Controller {
+
+	@Autowired
+	public Actor_Repositry rep;
+	
+	
+	@PostMapping("/")
+	public String add(@RequestBody Actor actor)
+	{
+		System.out.println("Adding Actor Name in Database Sucessfully...✅");
+		Thread.sleep(3000);
+		rep.save(Actor);
+		return actor.getActor_Name()+"Actor Name Add Suceesfullt";
+	}
+	
+}

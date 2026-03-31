@@ -1,0 +1,15 @@
+package com.example.demo.contorller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.example.demo.FindAndGet.Vidhyarti;
+
+public class Vidhyarti_Controller {
+
+	@Autowired
+	private Vidhyarti Vid;
+	
+	
+//	public String 
+	
+}

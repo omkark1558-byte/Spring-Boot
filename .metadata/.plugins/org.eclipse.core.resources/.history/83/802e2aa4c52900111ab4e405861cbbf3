@@ -1,0 +1,9 @@
+package com.revssion.session.Revision;
+
+public class Practice_1 {
+
+	public Practice_1()
+	{
+		System.out.println("First Constroctor Calling.....✅");
+	}
+}

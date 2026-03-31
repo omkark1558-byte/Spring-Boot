@@ -1,0 +1,10 @@
+package com.example.demo.Classes;
+
+public class Goggle_pe implements Payment_services {
+
+	@Override
+	public void Payment() {
+		 		
+	}
+
+}

@@ -1,0 +1,17 @@
+package com.example.payment_services_2.Controlling;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Student {
+	
+	public Student()
+	{
+		
+	}
+	public int getID()
+	{
+		return 102020;
+	}
+
+}

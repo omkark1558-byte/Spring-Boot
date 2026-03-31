@@ -1,0 +1,27 @@
+package com.Connectivity.Student.Controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.Connectivity.Student.StudentRepository;
+import com.Connectivity.Student.Entity.Student;
+
+@RestController
+public class Student_Controller {
+
+	@Autowired
+	public StudentRepository Repo;
+	
+	
+	
+	@PostMapping("/add-student")
+	public String add(@RequestBody Student student)
+	{
+		
+		Thread.sleep(2000);
+		Repo.save(student);
+		return student.getStudent_Name()+" Student Add Suceesfully...✅";
+	}
+}

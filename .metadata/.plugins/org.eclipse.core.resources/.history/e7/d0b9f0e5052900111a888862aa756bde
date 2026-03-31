@@ -1,0 +1,10 @@
+package com.Connectivity.Actor.Entity;
+
+import org.springframework.stereotype.Repository;
+
+import jakarta.persistence.Entity;
+
+@Entity
+public class Actor {
+
+}

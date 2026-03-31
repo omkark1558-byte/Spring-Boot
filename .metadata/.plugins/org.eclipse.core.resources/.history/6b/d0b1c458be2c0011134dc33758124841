@@ -1,0 +1,8 @@
+package com.companesis.Employee.Repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public class Employee_Repo implements JpaRepository<Employee_Entity, Integer> {
+
+	
+}

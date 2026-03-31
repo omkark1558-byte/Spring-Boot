@@ -1,0 +1,41 @@
+package com.example.demo.FindAndGet;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Vidhyarti {
+
+	public int vidhyarti_id;
+	public String vidhyarti_name;
+	public String vidhyarti_city;
+	public String vidhyarti_pincode;
+	public int getVidhyarti_id() {
+		return vidhyarti_id;
+	}
+	public void setVidhyarti_id(int vidhyarti_id) {
+		this.vidhyarti_id = vidhyarti_id;
+	}
+	public String getVidhyarti_name() {
+		return vidhyarti_name;
+	}
+	public void setVidhyarti_name(String vidhyarti_name) {
+		this.vidhyarti_name = vidhyarti_name;
+	}
+	public String getVidhyarti_city() {
+		return vidhyarti_city;
+	}
+	public void setVidhyarti_city(String vidhyarti_city) {
+		this.vidhyarti_city = vidhyarti_city;
+	}
+	public String getVidhyarti_pincode() {
+		return vidhyarti_pincode;
+	}
+	public void setVidhyarti_pincode(String vidhyarti_pincode) {
+		this.vidhyarti_pincode = vidhyarti_pincode;
+	}
+	
+	
+	
+	
+	
+}
