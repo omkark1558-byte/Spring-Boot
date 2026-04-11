@@ -1,16 +1,16 @@
 package com.companesis.EmployeeServices;
 
-import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 //import org.springframework.web.bind.annotation.PostMapping;
 
-import com.companesis.Employee.Entity.Employee;
+//import com.companesis.Employee.Entity.Employee;
 
 @Service
 public class Employee_services {
 	
-	@Autowired
-	private Employee serviec;
+//	@Autowired
+//	private Employee serviec;
 
 //	
 //	@PostMapping("/add-emp")

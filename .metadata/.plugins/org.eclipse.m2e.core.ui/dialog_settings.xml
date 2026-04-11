@@ -2,6 +2,11 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="D:\Spring_Boot\hospital"/>
+			<item value="D:\Spring_Boot\Airlines"/>
+			<item value="D:\Spring_Boot\scope_types"/>
+			<item value="D:\Spring_Boot\Aopllo_Hospital"/>
+			<item value="D:\Spring_Boot\Amazon"/>
 			<item value="D:\Spring_Boot\office_Employee"/>
 			<item value="D:\Spring_Boot\Employee"/>
 			<item value="D:\Spring_Boot\demo"/>

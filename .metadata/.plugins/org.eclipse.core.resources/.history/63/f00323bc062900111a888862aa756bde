@@ -1,8 +1,0 @@
-package com.Connectivity.Actor.Repositry;
-
-
-
-
-public interface Actor_Repositry {
-
-}

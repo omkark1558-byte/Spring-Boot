@@ -1,7 +1,0 @@
-package com.companesis.Employee.Repository;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-
-public class Employee_rpo  extends JpaRepository<T, ID> {
-
-}

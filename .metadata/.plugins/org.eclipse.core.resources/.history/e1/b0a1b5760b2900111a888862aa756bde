@@ -1,9 +1,0 @@
-package com.Connectivity.Actor.RestController;
-
-import org.springframework.web.bind.annotation.RestController;
-
-@RestController
-public class Actor_Controller {
-
-	
-}

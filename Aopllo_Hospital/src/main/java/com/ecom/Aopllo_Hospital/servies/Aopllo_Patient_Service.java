@@ -27,4 +27,10 @@ public class Aopllo_Patient_Service {
 	public void delete(int p_id) {
 		rpo.deleteById(p_id);
 	}
+	
+	public List<Aopllo_Patient> getByname(String p_name)
+	{
+		return rpo.getByname(p_name);
+	}
+	
 }

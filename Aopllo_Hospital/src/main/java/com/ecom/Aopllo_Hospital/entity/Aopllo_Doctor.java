@@ -1,12 +1,15 @@
 package com.ecom.Aopllo_Hospital.entity;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Aopllo_Doctor {
@@ -16,22 +19,22 @@ public class Aopllo_Doctor {
 	int d_id;
 	private String d_name;
 
+	@OneToMany(mappedBy="dr")
+	@Autowired
+	private List<Aopllo_Patient> patient;
+	
+	public List<Aopllo_Patient> getPatient() {
+		return patient;
+	}
+
+	public void setPatient(List<Aopllo_Patient> patient) {
+		this.patient = patient;
+	}
+
 	@Column(unique = true)
 	private String d_email;
 	private String d_speciality;
 	private String d_date;
-
-	@JoinColumn(name = "p_id")
-	@ManyToOne
-	private Aopllo_Patient pat;
-
-	public Aopllo_Patient getPat() {
-		return pat;
-	}
-
-	public void setPat(Aopllo_Patient pat) {
-		this.pat = pat;
-	}
 
 	public int getD_id() {
 		return d_id;

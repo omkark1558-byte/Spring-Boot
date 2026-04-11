@@ -1,8 +1,0 @@
-package com.example.Books_Project.Repositry;
-
-import org.springframework.stereotype.Repository;
-
-@Repository
-public interface Books_Repositry {
-
-}
