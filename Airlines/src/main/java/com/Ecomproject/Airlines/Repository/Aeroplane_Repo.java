@@ -7,7 +7,8 @@ import com.Ecomproject.Airlines.Entity.Aeroplane_Entity;
 
 
 @Repository
-public interface Aeroplane_Repo extends JpaRepository<Aeroplane_Entity, Integer> {
+public interface Aeroplane_Repo extends JpaRepository<Aeroplane_Entity, Integer>{ 
 
+	
 	
 }

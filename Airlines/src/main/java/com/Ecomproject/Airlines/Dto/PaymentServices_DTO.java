@@ -1,16 +1,23 @@
 package com.Ecomproject.Airlines.Dto;
 
-import java.util.UUID;
-
 public class PaymentServices_DTO {
 
-	UUID transcation_id;
+	int p_id;
+	String p_status;
 
-	public UUID getTranscation_id() {
-		return transcation_id;
+	public int getP_id() {
+		return p_id;
 	}
 
-	public void setTranscation_id(UUID transcation_id) {
-		this.transcation_id = transcation_id;
+	public void setP_id(int p_id) {
+		this.p_id = p_id;
+	}
+
+	public String getP_status() {
+		return p_status;
+	}
+
+	public void setP_status(String p_status) {
+		this.p_status = p_status;
 	}
 }

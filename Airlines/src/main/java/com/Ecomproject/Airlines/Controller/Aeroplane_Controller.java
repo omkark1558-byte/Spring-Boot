@@ -8,41 +8,31 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.Ecomproject.Airlines.Entity.Aeroplane_Entity;
-import com.Ecomproject.Airlines.Repository.Aeroplane_Repo;
+import com.Ecomproject.Airlines.Services.Aeroplane_Services;
 
 @RestController
-@RequestMapping("/Aeroplanes")
-public class Aeroplane_Controller {
+public class Aeroplane_controller {
 
-	
-	
 	@Autowired
-	private Aeroplane_Repo repo;
-	
-	
-	@PostMapping("/add-Aeroplane")
-	public String add(@RequestBody Aeroplane_Entity aero)
-	{
-		repo.save(aero);
-		return aero.getA_name()+" Aeroplane Added ✅";
+	private Aeroplane_Services aeroservi;
+
+	@PostMapping("/add-aeroplane")
+	public String addAeroplane(@RequestBody Aeroplane_Entity entity) {
+		aeroservi.SaveAeroplane(entity);
+		return entity.getA_name() + "";
 	}
-	
-	@GetMapping("/get-Airlines")
-	public List<Aeroplane_Entity> getAll()
-	{
-		return repo.findAll();
+
+	@GetMapping("/get-aeroplane")
+	public List<Aeroplane_Entity> getAll() {
+		return aeroservi.getAeroplane();
 	}
-	
-	@DeleteMapping("/delete/{a_id}")
-	public String delete(@PathVariable (value="a_id") long a_id)
-	{
-		repo.deleteById((int) a_id);
+
+	@DeleteMapping("/deleted-aeroplane/{a_id}")
+	public String delete( @PathVariable  (value="a_id") int a_id) {
+		aeroservi.deleteAeroplane(a_id);
 		return "Deleted ⚠️";
 	}
-	
-	
 }

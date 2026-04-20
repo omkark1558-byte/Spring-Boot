@@ -1,50 +1,30 @@
 package com.Ecomproject.Airlines.Entity;
 
-import jakarta.persistence.Column;
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Aeroplane_Entity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	long a_id;
+	int a_id;
+	String a_name;
+	String a_model;
 
-	@ManyToOne
-	@JoinColumn(name = "c_id")
-	private Customer_Entity customer;
+	@OneToMany(mappedBy = "aeroplane")
+	private List<Customer_Entity> customer;
 
-	private String a_name;
-
-	public long getId() {
+	public int getA_id() {
 		return a_id;
 	}
 
-	public void setId(long a_id) {
-		this.a_id = a_id;
-	}
-
-	public String getModel() {
-		return model;
-	}
-
-	public void setModel(String model) {
-		this.model = model;
-	}
-
-	@Column(unique = true)
-	private String model;
-
-	public long getA_id() {
-		return a_id;
-	}
-
-	public void setA_id(long a_id) {
+	public void setA_id(int a_id) {
 		this.a_id = a_id;
 	}
 
@@ -56,12 +36,12 @@ public class Aeroplane_Entity {
 		this.a_name = a_name;
 	}
 
-	public Customer_Entity getCustomer() {
-		return customer;
+	public String getA_model() {
+		return a_model;
 	}
 
-	public void setCustomer(Customer_Entity customerz) {
-		customer = customerz;
+	public void setA_model(String a_model) {
+		this.a_model = a_model;
 	}
 
 }

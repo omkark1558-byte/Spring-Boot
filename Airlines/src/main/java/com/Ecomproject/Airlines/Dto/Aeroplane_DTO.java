@@ -1,32 +1,29 @@
 package com.Ecomproject.Airlines.Dto;
 
-import com.Ecomproject.Airlines.Entity.Aeroplane_Entity;
 
 public class Aeroplane_DTO {
 
-	
 	int a_id;
 	String a_name;
+	String a_model;
+	
 	public int getA_id() {
 		return a_id;
 	}
-	public void setA_id(long l) {
-		this.a_id = (int) l;
+	public void setA_id(int a_id) {
+		this.a_id = a_id;
 	}
 	public String getA_name() {
 		return a_name;
 	}
 	public void setA_name(String a_name) {
 		this.a_name = a_name;
-	}	
-	
-	public static Aeroplane_DTO convert(Aeroplane_Entity aro)
-	{
-		Aeroplane_DTO ad = new Aeroplane_DTO();
-		ad.setA_id(aro.getA_id());
-		ad.setA_name(aro.getA_name());
-		return ad;
-		
 	}
-	
+	public String getA_model() {
+		return a_model;
+	}
+	public void setA_model(String a_model) {
+		this.a_model = a_model;
+	}
+
 }

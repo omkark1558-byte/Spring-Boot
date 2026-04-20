@@ -1,55 +1,44 @@
 package com.Ecomproject.Airlines.Entity;
 
-import java.util.UUID;
-
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne; 
 
 @Entity
 public class PaymentServices_Entity {
 
+	
 	@Id
-	UUID transcation_id;
-
-	private int p_id;
-	private String status;
-
-	@ManyToOne
-	@JoinColumn(name = "c_id")
-	private Customer_Entity customer;
-
-	public UUID getTranscation_id() {
-		return transcation_id;
-	}
-
-	public void setTranscation_id(UUID transcation_id) {
-		this.transcation_id = transcation_id;
-	}
-
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	int p_id;
+	String p_status;
+	
+	 @OneToOne
+	 @JoinColumn(name = "t_id")
+	 private Ticket_Entity ticket;
+	 
+	
 	public int getP_id() {
 		return p_id;
 	}
-
 	public void setP_id(int p_id) {
 		this.p_id = p_id;
 	}
-
-	public String getStatus() {
-		return status;
+	public String getP_status() {
+		return p_status;
 	}
-
-	public void setStatus(String status) {
-		this.status = status;
+	public void setP_status(String p_status) {
+		this.p_status = p_status;
 	}
-
-	public Customer_Entity getCustomer() {
-		return customer;
+	public Ticket_Entity getTickets() {
+		return ticket;
 	}
-
-	public void setCustomer(Customer_Entity customers) {
-		customer = customers;
-	}
-
+	public void setTickets(Ticket_Entity tickets) {
+		this.ticket = tickets;
+	} 
+	
+	
 }

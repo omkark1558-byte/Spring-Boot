@@ -1,14 +1,15 @@
 package com.Ecomproject.Airlines.Dto;
 
-import com.Ecomproject.Airlines.Entity.Ticket_Entity;
+import java.time.LocalDate;
 
 public class Ticket_DTO {
 
 	int t_id;
-
-	double t_price;
-	String t_destination;
-	String t_boarding;
+	String t_status;
+	LocalDate date;
+	double price;
+	private String aeroplaneName;
+	private String paymentStatus;
 
 	public int getT_id() {
 		return t_id;
@@ -17,37 +18,43 @@ public class Ticket_DTO {
 	public void setT_id(int t_id) {
 		this.t_id = t_id;
 	}
-
-	public double getT_price() {
-		return t_price;
+	public String getT_status() {
+		return t_status;
 	}
 
-	public void setT_price(double t_price) {
-		this.t_price = t_price;
+	public void setT_status(String t_status) {
+		this.t_status = t_status;
 	}
 
-	public String getT_destination() {
-		return t_destination;
+	public LocalDate getDate() {
+		return date;
 	}
 
-	public void setT_destination(String t_destination) {
-		this.t_destination = t_destination;
+	public void setDate(LocalDate date) {
+		this.date = date;
 	}
 
-	public String getT_boarding() {
-		return t_boarding;
+	public double getPrice() {
+		return price;
 	}
 
-	public void setT_boarding(String t_boarding) {
-		this.t_boarding = t_boarding;
+	public void setPrice(double price) {
+		this.price = price;
 	}
 
-	public static Ticket_DTO convert(Ticket_Entity tick) {
-		Ticket_DTO td = new Ticket_DTO();
-		td.setT_id(tick.getT_id());
-		td.setT_price(tick.getT_price());
-		td.setT_boarding(tick.getT_boarding());
-		td.setT_destination(tick.getT_destination());
-		return td;
+	public String getAeroplaneName() {
+		return aeroplaneName;
+	}
+
+	public void setAeroplaneName(String aeroplaneName) {
+		this.aeroplaneName = aeroplaneName;
+	}
+
+	public String getPaymentStatus() {
+		return paymentStatus;
+	}
+
+	public void setPaymentStatus(String paymentStatus) {
+		this.paymentStatus = paymentStatus;
 	}
 }

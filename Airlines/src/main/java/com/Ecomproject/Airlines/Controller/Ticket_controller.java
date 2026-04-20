@@ -8,38 +8,31 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.Ecomproject.Airlines.Entity.Ticket_Entity;
-import com.Ecomproject.Airlines.Repository.Ticket_Repo;
+import com.Ecomproject.Airlines.Services.Ticket_Services;
 
 @RestController
-@RequestMapping("/Tickets")
 public class Ticket_controller {
 
-	
-	
 	@Autowired
-	private Ticket_Repo ticket;
-	
+	private Ticket_Services ticket;
+
 	@PostMapping("/add-Tickets")
-	public String add(@RequestBody Ticket_Entity tick)
-	{
-		ticket.save(tick);
-		return tick.getT_destination()+" Ticket Booked SucessFully 🛩️";	
+	public String addTickets(@RequestBody Ticket_Entity tick) {
+		ticket.add(tick);
+		return tick.getT_name() + " Ticket Confirm";
 	}
-	
-	@GetMapping("/get-ticket")
-	public List<Ticket_Entity> getAll()
-	{
-		return ticket.findAll();
+
+	@GetMapping("/get-Tickets")
+	public List<Ticket_Entity> getTickets() {
+		return ticket.getAll();
 	}
-	
-	@DeleteMapping("/deleted")
-	public String deleted(@PathVariable(value="t_id") int t_id)
-	{
-		ticket.deleteById(t_id);
-		return "Ticket Deleted ⚠️";
+
+	@DeleteMapping("/deleted-Tickets")
+	public String deletedTickets(@PathVariable (value="t_id") int t_id) {
+		ticket.delete(t_id);
+		return "Deleted Ticket ⚠️";
 	}
 }
