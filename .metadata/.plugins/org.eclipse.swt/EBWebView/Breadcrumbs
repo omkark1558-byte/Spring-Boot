@@ -1,4 +1,3 @@
-0:00:00 Microsoft.Shutdown.TabStripModel.CloseWebContentses
 0:00:00 Microsoft.Shutdown.TabStripModel.CloseWebContentses_FastShutdown
 0:00:00 Microsoft.Shutdown.TabStripModel.ShouldRunUnloadListenerBeforeClosing_false
 0:00:00 Tab1 FinishNav1 ERR_ABORTED
@@ -31,3 +30,4 @@
 0:00:00 Tab2 PageLoad
 0:00:00 Tab2 FinishNav4
 0:00:00 Tab2 PageLoad
+0:02:40 Microsoft.UnloadController.IsUnclosableApp_IsNotWebApp

@@ -24,9 +24,8 @@ public class Aopllo_Doctor_Service {
 
 	public List<Doctor_Dto> getAllDoctor() {
 		List<Aopllo_Doctor> list = ro.findAll();
-		
-	 return list.stream().map((ap)->(Doctor_Dto.convert(ap)))
-			 .collect(Collectors.toList());
+
+		return list.stream().map((ap) -> (Doctor_Dto.convert(ap))).collect(Collectors.toList());
 	}
 
 	public void deleteDoctor(int d_id) {
@@ -37,4 +36,3 @@ public class Aopllo_Doctor_Service {
 		return ro.getByName(d_name);
 	}
 }
-

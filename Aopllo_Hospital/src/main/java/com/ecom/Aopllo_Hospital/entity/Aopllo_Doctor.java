@@ -2,7 +2,7 @@ package com.ecom.Aopllo_Hospital.entity;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -19,10 +19,10 @@ public class Aopllo_Doctor {
 	int d_id;
 	private String d_name;
 
-	@OneToMany(mappedBy="dr")
-	@Autowired
+	@OneToMany(mappedBy = "dr")
+	@JsonIgnore
 	private List<Aopllo_Patient> patient;
-	
+
 	public List<Aopllo_Patient> getPatient() {
 		return patient;
 	}

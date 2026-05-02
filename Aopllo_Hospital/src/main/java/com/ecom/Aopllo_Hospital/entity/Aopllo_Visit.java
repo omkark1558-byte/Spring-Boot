@@ -18,9 +18,9 @@ public class Aopllo_Visit {
 	private LocalDate v_date;
 
 	@ManyToOne
-	@JoinColumn(name="patient_id")
+	@JoinColumn(name = "patient_id")
 	private Aopllo_Patient patient;
-	
+
 	public Aopllo_Patient getPatient() {
 		return patient;
 	}
@@ -28,7 +28,6 @@ public class Aopllo_Visit {
 	public void setPatient(Aopllo_Patient patient) {
 		this.patient = patient;
 	}
-
 
 	public int getV_id() {
 		return v_id;
@@ -45,5 +44,4 @@ public class Aopllo_Visit {
 	public void setV_date(LocalDate v_date) {
 		this.v_date = v_date;
 	}
-
 }

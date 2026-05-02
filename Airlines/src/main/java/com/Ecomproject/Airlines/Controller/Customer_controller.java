@@ -11,10 +11,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 import com.Ecomproject.Airlines.Entity.Customer_Entity;
 import com.Ecomproject.Airlines.Exception.CustomerNotFoundException;
 import com.Ecomproject.Airlines.Services.Customer_Services;
 
+@CrossOrigin(origins = "*")
 @RestController
 public class Customer_controller {
 
@@ -45,7 +48,8 @@ public class Customer_controller {
 		return "Deleted ⚠️";
 	}
 
-	
+
+ 
 //	@ExceptionHandler(CustomerNotFoundException.class)
 //	public String customerhandler(CustomerNotFoundException ex)
 //	{

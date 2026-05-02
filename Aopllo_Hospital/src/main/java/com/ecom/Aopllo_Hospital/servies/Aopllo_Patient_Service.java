@@ -10,7 +10,7 @@ import com.ecom.Aopllo_Hospital.repository.Patient_Repo;
 
 @Service
 public class Aopllo_Patient_Service {
-	
+
 	@Autowired
 	private Patient_Repo rpo;
 
@@ -27,10 +27,8 @@ public class Aopllo_Patient_Service {
 	public void delete(int p_id) {
 		rpo.deleteById(p_id);
 	}
-	
-	public List<Aopllo_Patient> getByname(String p_name)
-	{
+
+	public List<Aopllo_Patient> getByname(String p_name) {
 		return rpo.getByname(p_name);
 	}
-	
 }
