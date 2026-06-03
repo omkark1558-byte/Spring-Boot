@@ -6,7 +6,9 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.ecom.Aopllo_Hospital.Dto.DoctorRequestDTO;
 import com.ecom.Aopllo_Hospital.Dto.Doctor_Dto;
+import com.ecom.Aopllo_Hospital.Exception.ResourceNotFoundException;
 import com.ecom.Aopllo_Hospital.entity.Aopllo_Doctor;
 import com.ecom.Aopllo_Hospital.repository.Doctor_Repo;
 
@@ -34,5 +36,17 @@ public class Aopllo_Doctor_Service {
 
 	public List<Aopllo_Doctor> getByname(String d_name) {
 		return ro.getByName(d_name);
+	}
+
+	public String updateDoctor(int d_id, DoctorRequestDTO dto) {
+		Aopllo_Doctor doctor = ro.findById(d_id).orElseThrow(() -> new ResourceNotFoundException("Doctor Not Found"));
+
+		doctor.setD_name(dto.getD_name());
+		doctor.setD_email(dto.getD_email());
+		doctor.setD_speciality(dto.getD_speciality());
+
+		ro.save(doctor);
+
+		return "Doctor Updated Successfully ✅";
 	}
 }

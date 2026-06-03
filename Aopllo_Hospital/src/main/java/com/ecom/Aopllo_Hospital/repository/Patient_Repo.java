@@ -15,4 +15,7 @@ public interface Patient_Repo extends JpaRepository<Aopllo_Patient, Integer> {
 	@Query(value = "select * from aopllo_patient where p_name = :p_name", nativeQuery = true)
 	List<Aopllo_Patient> getByname(@Param(value = "p_name") String p_name);
 
+	@Query(value = "select * from aopllo_patient where p_name like %:name%", nativeQuery = true)
+	List<Aopllo_Patient> searchPatient(@Param("name") String name);
+
 }

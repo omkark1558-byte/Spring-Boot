@@ -4,13 +4,17 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ecom.Aopllo_Hospital.Dto.DoctorRequestDTO;
 import com.ecom.Aopllo_Hospital.Dto.PatientRequestDTO;
 import com.ecom.Aopllo_Hospital.Exception.ResourceNotFoundException;
 import com.ecom.Aopllo_Hospital.entity.Aopllo_Doctor;
@@ -20,6 +24,7 @@ import com.ecom.Aopllo_Hospital.repository.Patient_Repo;
 import com.ecom.Aopllo_Hospital.servies.Aopllo_Patient_Service;
 
 @RestController
+@CrossOrigin(allowedHeaders = "http://localhost:3000")
 public class Aopllo_Patient_Controller {
 
 	@Autowired
@@ -72,4 +77,58 @@ public class Aopllo_Patient_Controller {
 	public ResponseEntity<List<Aopllo_Patient>> getByname(@PathVariable String p_name) {
 		return ResponseEntity.ok(ser.getByname(p_name));
 	}
+
+	@GetMapping("/search-patient/{name}")
+	public ResponseEntity<List<Aopllo_Patient>> search(@PathVariable String name) {
+		return ResponseEntity.ok(ser.searchPatient(name));
+	}
+	
+	@PutMapping("/update-patient/{id}")
+	public ResponseEntity<?> updatePatient(
+	        @PathVariable int id,
+	        @RequestBody PatientRequestDTO dto)
+	{
+	    return ResponseEntity.ok(
+	            ser.updatePatient(id, dto));
+	}
+	
+	@GetMapping("/patient-page")
+	public ResponseEntity<?> getPatientPage(
+	        @RequestParam int page,
+	        @RequestParam int size)
+	{
+	    return ResponseEntity.ok(
+	            ser.getPatientPage(page, size));
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+//	@GetMapping("/patient-sort")
+//	public ResponseEntity<?> sortPatient(@RequestParam String field) {
+//
+//	    System.out.println("FIELD = " + field);
+//
+//	    return ResponseEntity.ok(ser.sortPatient(field));
+//	}
+//	 
+	
 }

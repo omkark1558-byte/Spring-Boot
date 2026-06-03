@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,7 +22,7 @@ import com.ecom.Aopllo_Hospital.servies.Aopllo_Doctor_Service;
 
 import jakarta.validation.Valid;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins ="http://localhost:3000")
 @RestController
 public class Aopllo_Doctor_Controller {
 
@@ -33,15 +34,14 @@ public class Aopllo_Doctor_Controller {
 
 	@PostMapping("/add-doctor")
 	public ResponseEntity<?> add(@Valid @RequestBody List<DoctorRequestDTO> DR) {
-		
-		List<Aopllo_Doctor> list = DR.stream()
-				.map((dto)->{
-					Aopllo_Doctor d = new Aopllo_Doctor();
-					d.setD_name(dto.getD_name());
-					d.setD_email(dto.getD_email());
-					d.setD_speciality(dto.getD_speciality());
-					return d;
-				}).toList();
+
+		List<Aopllo_Doctor> list = DR.stream().map((dto) -> {
+			Aopllo_Doctor d = new Aopllo_Doctor();
+			d.setD_name(dto.getD_name());
+			d.setD_email(dto.getD_email());
+			d.setD_speciality(dto.getD_speciality());
+			return d;
+		}).toList();
 
 		repo.saveAll(list);
 		return ResponseEntity.ok(DR.size() + "Doctor Added SuccessFully ✅");
@@ -61,6 +61,15 @@ public class Aopllo_Doctor_Controller {
 
 		repo.deleteById(d_id);
 		return ResponseEntity.ok("Deleted Id ⚠️");
+	}
+	
+	@PutMapping("/update-doctor/{d_id}")
+	public ResponseEntity<?> updateDoctor(
+			@PathVariable int d_id,
+			@RequestBody DoctorRequestDTO dto) {
+		
+		return ResponseEntity.ok(
+				Ser.updateDoctor(d_id, dto));
 	}
 
 	@GetMapping("/get-name/{d_name}")
