@@ -82,46 +82,17 @@ public class Aopllo_Patient_Controller {
 	public ResponseEntity<List<Aopllo_Patient>> search(@PathVariable String name) {
 		return ResponseEntity.ok(ser.searchPatient(name));
 	}
-	
+
 	@PutMapping("/update-patient/{id}")
-	public ResponseEntity<?> updatePatient(
-	        @PathVariable int id,
-	        @RequestBody PatientRequestDTO dto)
-	{
-	    return ResponseEntity.ok(
-	            ser.updatePatient(id, dto));
+	public ResponseEntity<?> updatePatient(@PathVariable int id, @RequestBody PatientRequestDTO dto) {
+		return ResponseEntity.ok(ser.updatePatient(id, dto));
 	}
-	
+
 	@GetMapping("/patient-page")
-	public ResponseEntity<?> getPatientPage(
-	        @RequestParam int page,
-	        @RequestParam int size)
-	{
-	    return ResponseEntity.ok(
-	            ser.getPatientPage(page, size));
+	public ResponseEntity<?> getPatientPage(@RequestParam int page, @RequestParam int size) {
+		return ResponseEntity.ok(ser.getPatientPage(page, size));
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 //	@GetMapping("/patient-sort")
 //	public ResponseEntity<?> sortPatient(@RequestParam String field) {
 //
@@ -129,6 +100,5 @@ public class Aopllo_Patient_Controller {
 //
 //	    return ResponseEntity.ok(ser.sortPatient(field));
 //	}
-//	 
-	
+
 }
