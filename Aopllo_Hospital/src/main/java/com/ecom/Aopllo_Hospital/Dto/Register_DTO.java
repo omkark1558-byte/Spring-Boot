@@ -4,7 +4,7 @@ public class Register_DTO {
 
 	private String username;
 	private String password;
-	private String role;
+	private String role = "Admin";
 
 	public String getUsername() {
 		return username;

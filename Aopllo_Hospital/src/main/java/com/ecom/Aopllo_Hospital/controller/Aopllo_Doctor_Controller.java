@@ -17,12 +17,13 @@ import com.ecom.Aopllo_Hospital.Dto.DoctorRequestDTO;
 import com.ecom.Aopllo_Hospital.Dto.Doctor_Dto;
 import com.ecom.Aopllo_Hospital.Exception.ResourceNotFoundException;
 import com.ecom.Aopllo_Hospital.entity.Aopllo_Doctor;
+import com.ecom.Aopllo_Hospital.entity.Aopllo_Patient;
 import com.ecom.Aopllo_Hospital.repository.Doctor_Repo;
 import com.ecom.Aopllo_Hospital.servies.Aopllo_Doctor_Service;
 
 import jakarta.validation.Valid;
 
-@CrossOrigin(origins ="http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 public class Aopllo_Doctor_Controller {
 
@@ -62,18 +63,23 @@ public class Aopllo_Doctor_Controller {
 		repo.deleteById(d_id);
 		return ResponseEntity.ok("Deleted Id ⚠️");
 	}
-	
+
 	@PutMapping("/update-doctor/{d_id}")
-	public ResponseEntity<?> updateDoctor(
-			@PathVariable int d_id,
-			@RequestBody DoctorRequestDTO dto) {
-		
-		return ResponseEntity.ok(
-				Ser.updateDoctor(d_id, dto));
+	public ResponseEntity<?> updateDoctor(@PathVariable int d_id, @RequestBody DoctorRequestDTO dto) {
+
+		return ResponseEntity.ok(Ser.updateDoctor(d_id, dto));
 	}
 
 	@GetMapping("/get-name/{d_name}")
 	public ResponseEntity<List<Aopllo_Doctor>> getByname(@PathVariable(value = "d_name") String d_name) {
 		return ResponseEntity.ok(Ser.getByname(d_name));
+	}
+
+	@GetMapping("/doctor/{id}/patients")
+	public List<Aopllo_Patient> getDoctorPatients(@PathVariable int id) {
+
+		Aopllo_Doctor doctor = repo.findById(id).orElseThrow();
+
+		return doctor.getPatient();
 	}
 }

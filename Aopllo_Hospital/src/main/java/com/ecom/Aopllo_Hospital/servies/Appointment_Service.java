@@ -76,5 +76,6 @@ public class Appointment_Service {
 		appointmentRepo.save(ap);
 
 		return "Status Updated Successfully";
+		
 	}
 }

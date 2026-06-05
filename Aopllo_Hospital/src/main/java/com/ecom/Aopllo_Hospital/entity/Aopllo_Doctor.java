@@ -22,6 +22,9 @@ public class Aopllo_Doctor {
 	@OneToMany(mappedBy = "dr")
 	@JsonIgnore
 	private List<Aopllo_Patient> patient;
+	
+	@OneToMany(mappedBy = "doctor")
+	private List<Aopllo_Patient> patients;
 
 	public List<Aopllo_Patient> getPatient() {
 		return patient;

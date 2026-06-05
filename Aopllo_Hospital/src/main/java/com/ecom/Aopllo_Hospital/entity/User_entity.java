@@ -19,7 +19,7 @@ public class User_entity {
 
 	private String password;
 
-	private String role;
+	private String role = "Admin";
 
 	public int getId() {
 		return id;
