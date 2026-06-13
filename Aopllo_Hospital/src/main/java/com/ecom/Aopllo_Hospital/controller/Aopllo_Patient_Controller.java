@@ -50,7 +50,7 @@ public class Aopllo_Patient_Controller {
 
 			Aopllo_Doctor doctor = repo.findById(dto.getDoctorId())
 					.orElseThrow(() -> new ResourceNotFoundException("Doctor Not Found"));
-			p.setDr(doctor);
+			p.setDoctor(doctor);
 			return p;
 		}).toList();
 		prepo.saveAll(patients);

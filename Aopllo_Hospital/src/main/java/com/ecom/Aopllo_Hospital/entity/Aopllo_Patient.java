@@ -1,5 +1,7 @@
 package com.ecom.Aopllo_Hospital.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,10 +21,7 @@ public class Aopllo_Patient {
 
 	@ManyToOne
 	@JoinColumn(name = "d_id")
-	private Aopllo_Doctor dr;
-
-	@ManyToOne
-	@JoinColumn(name = "d_id")
+	@JsonBackReference
 	private Aopllo_Doctor doctor;
 
 	@Column(unique = true)
@@ -52,14 +51,6 @@ public class Aopllo_Patient {
 
 	public void setP_age(String p_age) {
 		this.p_age = p_age;
-	}
-
-	public Aopllo_Doctor getDr() {
-		return dr;
-	}
-
-	public void setDr(Aopllo_Doctor dr) {
-		this.dr = dr;
 	}
 
 	public String getP_email() {

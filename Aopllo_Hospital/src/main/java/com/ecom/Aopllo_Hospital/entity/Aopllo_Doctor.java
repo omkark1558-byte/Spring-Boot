@@ -3,6 +3,7 @@ package com.ecom.Aopllo_Hospital.entity;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -19,26 +20,16 @@ public class Aopllo_Doctor {
 	int d_id;
 	private String d_name;
 
-	@OneToMany(mappedBy = "dr")
-	@JsonIgnore
-	private List<Aopllo_Patient> patient;
-	
 	@OneToMany(mappedBy = "doctor")
+	@JsonManagedReference
 	private List<Aopllo_Patient> patients;
-
-	public List<Aopllo_Patient> getPatient() {
-		return patient;
-	}
-
-	public void setPatient(List<Aopllo_Patient> patient) {
-		this.patient = patient;
-	}
 
 	@Column(unique = true)
 	private String d_email;
 	private String d_speciality;
 	private String d_date;
 
+	
 	public int getD_id() {
 		return d_id;
 	}
@@ -77,6 +68,14 @@ public class Aopllo_Doctor {
 
 	public void setD_date(String d_date) {
 		this.d_date = d_date;
+	}
+
+	public List<Aopllo_Patient> getPatients() {
+		return patients;
+	}
+
+	public void setPatients(List<Aopllo_Patient> patients) {
+		this.patients = patients;
 	}
 
 }

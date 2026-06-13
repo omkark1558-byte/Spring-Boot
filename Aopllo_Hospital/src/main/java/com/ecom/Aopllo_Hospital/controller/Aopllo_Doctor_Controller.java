@@ -80,6 +80,6 @@ public class Aopllo_Doctor_Controller {
 
 		Aopllo_Doctor doctor = repo.findById(id).orElseThrow();
 
-		return doctor.getPatient();
+		return doctor.getPatients();
 	}
 }

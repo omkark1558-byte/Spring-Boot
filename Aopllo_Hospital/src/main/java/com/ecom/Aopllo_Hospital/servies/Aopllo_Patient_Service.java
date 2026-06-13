@@ -63,7 +63,7 @@ public class Aopllo_Patient_Service {
 		Aopllo_Doctor doctor = repo.findById(dto.getDoctorId())
 				.orElseThrow(() -> new ResourceNotFoundException("Doctor Not Found"));
 
-		patient.setDr(doctor);
+		patient.setDoctor(doctor);
 
 		rpo.save(patient);
 

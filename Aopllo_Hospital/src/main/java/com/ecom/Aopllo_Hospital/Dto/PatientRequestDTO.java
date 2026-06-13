@@ -20,6 +20,8 @@ public class PatientRequestDTO {
 
 	@Pattern(regexp = "^[0-9]{10}$", message = "Mobile must be 10 Digit")
 	private String p_mobileno;
+	
+	private String doctorName;
 
 	private int doctorId;
 
@@ -69,5 +71,13 @@ public class PatientRequestDTO {
 
 	public void setDoctorId(int doctorId) {
 		this.doctorId = doctorId;
+	}
+
+	public String getDoctorName() {
+		return doctorName;
+	}
+
+	public void setDoctorName(String doctorName) {
+		this.doctorName = doctorName;
 	}
 }
